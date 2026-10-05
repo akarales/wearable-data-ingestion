@@ -1,0 +1,19 @@
+[package]
+name = "wearable-data-ingestion"
+description = "Wearable data ingestion (Vital pattern) — normalize to FHIR R4 Observations, detect trends"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+
+[dependencies]
+axum = "0.8.9"
+tokio = { version = "1.53.1", features = ["macros", "rt-multi-thread"] }
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.151"
+thiserror = "2.0.21"
+tracing = "0.1.44"
+tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
+tower = "0.5.3"
+tower-http = { version = "0.7.1", features = ["trace"] }
+reqwest = { version = "0.13.5", default-features = false, features = ["json", "rustls", "query"] }
+chrono = { version = "0.4.45", features = ["serde"] }
